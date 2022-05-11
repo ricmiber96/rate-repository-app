@@ -1,8 +1,8 @@
-import react from "react";
+import React from "react";
 import {FlatList,View, Text} from "react-native"
-import repositories from "../data/repositories";
 import RepositoryItem from "./RepositoryItem";
 import Constants from "expo-constants";
+import useRepositories from "../hooks/useRepositories";
 
 const ItemDivider = () => {
     return (
@@ -16,7 +16,9 @@ const ItemDivider = () => {
     );
   }
 
+
 const RepositoryList = () => {
+     const {repositories} = useRepositories()
     return (
         <FlatList 
         style={{marginBottom: Constants.statusBarHeight }}
